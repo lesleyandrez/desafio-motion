@@ -1,0 +1,149 @@
+$color: #D33;
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: 1s;
+}
+
+body{
+    color: #FFF;
+    font-family: sans-serif;
+    background-color: $color;
+}
+
+img{
+    max-width: 100%;
+}
+
+.toolbar--global{
+    background-color: green;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    height: 0;
+    z-index: 9999;
+    .menu-navigation{
+        height: 60px;
+        width: 60px;
+        padding: 18px;
+        position: absolute;
+        display: block;
+        left: 0px;
+        top: 0px;
+        svg{
+            fill: #FFF;
+        }
+    }
+}
+
+.toolbar--relative{
+    $height: 60px;
+    background-color: #00AA8D;
+    color: #FFF;
+    height: $height;
+    text-align: center;
+    line-height: $height;
+    .right{
+        position: absolute;
+        right: 0;
+    }
+    .icon-search{
+        height: $height;
+        width: 48px;
+        display: block;
+    }
+}
+
+.wrapper-page{
+    background-color: #FFF;
+    color: #333;
+}
+
+.wrapper-page.product{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.wrapper-page.home{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    .container-wrapper{
+        background-color: #F5F5F5;
+        flex: 1;
+        overflow-y: auto;
+    }
+}
+.cover{
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.card{
+    background-color: #FFF;
+    margin: 24px;
+    list-style: none;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    .cover{
+        height: 180px;
+    }
+}
+
+.header-product{
+    padding: 16px;
+    display: flex;
+    .icon{
+        width: 48px;
+    }
+    .info{
+        flex: 1;
+    }
+    .product-title{
+        font-weight: 400;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
+    .product-subtitle{
+        color: #999;
+    }
+}
+
+.wrapper-pages{
+    outline: 2px solid yellow;
+    outline-offset: -2px;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 100;
+}
+
+input{
+    display: block;
+    width: 100%;
+    padding: 8px;
+}
+
+input + input{
+    margin-top: 16px;
+}
