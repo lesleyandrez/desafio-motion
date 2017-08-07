@@ -4,13 +4,11 @@ $color: #D33;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    transition: 1s;
 }
 
 body{
     color: #FFF;
     font-family: sans-serif;
-    background-color: $color;
 }
 
 img{
@@ -69,6 +67,7 @@ img{
     left: 0;
     top: 0;
     overflow-y: auto;
+    will-change: top, left, width, height, display;
 }
 
 .wrapper-page.home{
@@ -124,8 +123,6 @@ img{
 }
 
 .wrapper-pages{
-    outline: 2px solid yellow;
-    outline-offset: -2px;
     width: 100vw;
     height: 100vh;
     position: fixed;

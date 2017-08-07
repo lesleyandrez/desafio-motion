@@ -18,18 +18,14 @@ export default function (sourceCoordinates) {
             left: [sourceCoordinates.left + 'px', '0px']
         }, {
                 duration: 100, easing: 'easeInOut', complete() {
-                    setTimeout(() => {
-                        $newPage.remove()
-                    }, 500);
+                    $newPage.remove()
                 }
             })
         Velocity($newPage.querySelector('.cover'), {
             height: ['180px', '50vh']
         }, {
                 duration: 100, easing: 'easeInOut', complete() {
-                    setTimeout(() => {
-                        $newPage.remove()
-                    }, 500);
+                    $newPage.remove()
                 }
             })
     }
