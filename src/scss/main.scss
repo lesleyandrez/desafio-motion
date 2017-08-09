@@ -22,7 +22,7 @@ img{
     top: 0;
     left: 0;
     height: 0;
-    z-index: 9999;
+    z-index: 99999;
     .menu-navigation{
         height: 60px;
         width: 60px;
@@ -39,6 +39,9 @@ img{
 
 .toolbar--relative{
     $height: 60px;
+    position: sticky;
+    top: 0px;
+    z-index: 999;
     background-color: #00AA8D;
     color: #FFF;
     height: $height;
@@ -68,17 +71,18 @@ img{
     top: 0;
     overflow-y: auto;
     will-change: top, left, width, height, display;
+    z-index: 9999;
 }
 
 .wrapper-page.home{
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     width: 100%;
     height: 100%;
     .container-wrapper{
         background-color: #F5F5F5;
-        flex: 1;
-        overflow-y: auto;
+        // flex: 1;
+        // overflow-y: auto;
     }
 }
 .cover{
@@ -86,6 +90,9 @@ img{
         width: 100%;
         height: 100%;
         object-fit: cover;
+        // position: absolute;
+        // top: 0;
+        // left: 0;
     }
 }
 
@@ -99,8 +106,28 @@ img{
                 0 1px 5px 0 rgba(0, 0, 0, 0.12),
                 0 3px 1px -2px rgba(0, 0, 0, 0.2);
     .cover{
+        position: relative;
         height: 180px;
     }
+}
+
+.cover{
+    // position: sticky;
+    // top: 0px;
+    // min-height: 60px;
+    position: relative;
+    overflow: hidden;
+}
+.color{
+    background-color: #00AA8D;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 99;
+    min-height: 60px;
 }
 
 .header-product{
@@ -123,9 +150,9 @@ img{
 }
 
 .wrapper-pages{
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
+    // width: 100vw;
+    // height: 100vh;
+    // position: absolute;
     top: 0;
     left: 0;
 }

@@ -3,6 +3,8 @@ import path from 'path'
 import BrowserSyncPlugin from 'browser-sync-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
+const DEBUG = process.env.NODE_ENV != 'production'
+
 export default {
     entry: {
         app: './src/js/index.js'
@@ -17,7 +19,7 @@ export default {
         overlay: true,
         hot: true
     },
-    devtool: 'cheap-eval-source-map',
+    devtool: DEBUG ? 'cheap-eval-source-map' : false,
     module: {
         rules: [
             {
@@ -32,7 +34,7 @@ export default {
             }
         ]
     },
-    plugins: [
+    plugins: DEBUG ? [
         new HtmlWebpackPlugin({
             title: "Start",
             template: "./src/index.hbs",
@@ -60,5 +62,12 @@ export default {
             ],
             proxy: 'http://localhost:8080/'
         }, { reload: false })
+    ] : [
+        new HtmlWebpackPlugin({
+            title: "Start",
+            template: "./src/index.hbs",
+            filename: path.join(__dirname, "dist/index.html")
+        }),
+        new webpack.optimize.UglifyJsPlugin()
     ]
 }

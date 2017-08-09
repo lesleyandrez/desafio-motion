@@ -9,9 +9,13 @@
     "build:js": "./node_modules/.bin/webpack",
     "build:css": "./node_modules/.bin/node-sass-chokidar src/scss/main.scss -o dist/css",
     "watch:js": "./node_modules/.bin/webpack-dev-server",
-    "watch:css": "npm run build:css -- --watch --recursive"
+    "watch:css": "npm run build:css -- --watch --recursive",
+    "copy:images": "cp -p src/img/** dist/img",
+    "copy:manifest": "cp -p src/manifest.json dist",
+    "build": "rm -rf dist && mkdir -p dist/img && run-p copy:* && export NODE_ENV='production' && webpack --optimize-minimize --define process.env.NODE_ENV=\"'production'\" && npm run build:css -- --output-style compressed",
+    "deploy": "npm run build && gh-pages -d dist"
   },
-  "author": "",
+  "author": "Lesley Andrez",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -21,6 +25,7 @@
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
     "bs-fullscreen-message": "^1.1.0",
+    "gh-pages": "^1.0.0",
     "handlebars": "^4.0.10",
     "handlebars-loader": "^1.5.0",
     "html-webpack-plugin": "^2.29.0",
@@ -31,6 +36,8 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
+    "choreographer-js": "^1.1.0",
+    "hammerjs": "^2.0.8",
     "velocity-animate": "^1.5.0"
   }
 }
