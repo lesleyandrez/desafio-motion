@@ -1,7 +1,6 @@
 {
     "short_name": "Pesto",
     "name": "Pesto by Lesley",
-    "display": "standalone",
     "icons": [
         {
             "src": "img/icon-144x144.png",
@@ -14,5 +13,7 @@
             "type": "image/png"
         }
     ],
-    "start_url": "index.html"
+    "start_url": "index.html",
+    "display": "standalone",
+    "theme_color": "#fe635f"
 }
